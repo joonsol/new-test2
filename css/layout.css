@@ -1,4 +1,7 @@
 /* display:none */
+footer .dep1 .btn-wrap{
+    display: none;
+}
 .btn-m-menu{
     display: none;
 }
@@ -90,7 +93,6 @@ header {
     left: 0;
     width: 100%;
     display: none;
-
 }
 
 .sub-nav {

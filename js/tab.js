@@ -88,32 +88,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         crtSwiper = new Swiper(activeSlider, {
             slidesPerView: 5,
-            autoplay: { delay: 3000 },
+            // autoplay: { delay: 3000 },
+            autoplay:false,
             loop: true,
             initialSlide: 0,
-            centeredSlides:true,
+            centeredSlides: true,
             navigation: {
                 nextEl: nextBtn,
                 prevEl: prevBtn
             },
-            breakpoints:{
-                0:{
-                    
+            breakpoints: {
+                0: {
+
                     slidesPerView: 1,
                 },
-                768:{
+                768: {
                     slidesPerView: 2,
-                    
+
                 },
-                1024:{
+                1024: {
                     slidesPerView: 3,
-                    
+
                 },
-                1400:{
+                1400: {
                     slidesPerView: 4,
-                    
+
                 },
-                1600:{
+                1600: {
                     slidesPerView: 5,
 
                 },

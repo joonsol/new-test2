@@ -5,45 +5,46 @@ $(function () {
   const header = $('header')//schOpen
   const schOpenBtn = $('.sch-open-btn')
   const schCloseBtn = $('.sch-c-btn')
-  
+
   const subList = $('.sub-list')
-  
-  
+
+
   //body  .mob-mOpen
   // .btn-m-menu  .addClass()
   const body = $('body')
   const btnMmenu = $('.btn-m-menu')
-  const subNavBtn=$('.sub-nav>li>span.blind')
+  const subNavBtn = $('.sub-nav>li>span.blind')
 
 
 
 
-  function mobReset(){
+  function mobReset() {
     subList.removeAttr('style')
     subNavBtn.parent('li').removeClass('on')
+    body.removeClass('mob-mOpen')
   }
 
 
-  function dskReset(){
+  function dskReset() {
     subNav.removeAttr('style')
     header.removeClass('schOpen')
   }
 
-  subNavBtn.on('click',function(){
+  subNavBtn.on('click', function () {
 
-    if($(this).parent('li').hasClass('on')){
+    if ($(this).parent('li').hasClass('on')) {
       $(this).parent('li').removeClass('on')
       $(this).siblings('.sub-list').slideUp()
 
-    }else{
+    } else {
 
       $(this)
-      .parent('li')
-      .addClass('on')
-      .siblings()
-      .removeClass('on')
-      .children('.sub-list')
-      .slideUp()
+        .parent('li')
+        .addClass('on')
+        .siblings()
+        .removeClass('on')
+        .children('.sub-list')
+        .slideUp()
 
 
       $(this).siblings('.sub-list').slideDown()
@@ -67,7 +68,7 @@ $(function () {
 
     }
 
-    if(winWidth>=1024){
+    if (winWidth >= 1024) {
       mobReset()
     }
 
@@ -84,7 +85,7 @@ $(function () {
     e.preventDefault()
     // console.log('click');
     header.removeClass('schOpen')
-    
+
   })
   schOpenBtn.click(function (e) {
     e.preventDefault()
@@ -95,7 +96,7 @@ $(function () {
 
 
 
-  mainNav.click(function () {
+  mainNav.on('mouseenter',function () {
 
     subNav.stop().slideDown()
   })
@@ -105,12 +106,12 @@ $(function () {
 
   subNav.on('mouseleave', function () {
 
-    if(window.innerWidth>=1024){
+    if (window.innerWidth >= 1024) {
 
       setTimeout(function () {
         subNav.stop().slideUp()
       }, 500)
-      
+
     }
 
 
@@ -226,3 +227,19 @@ const serviceSlider = new Swiper(".service-slider", {
     el: ".service-slider .swiper-pagination",
   },
 });
+const siteSlider = new Swiper('.site', {
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      navigation: {
+        nextEl: 'footer .dep1 .btn-wrap .swiper-button-next',
+        prevEl: 'footer .dep1 .btn-wrap .swiper-button-prev',
+        clickable: true
+      }
+
+    },
+    650: {
+      slidesPerView: 4
+    }
+  }
+})
