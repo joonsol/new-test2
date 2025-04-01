@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 const Nav = () => {
+    const userId=42
   return (
     <nav>
         <ul>
@@ -11,7 +12,7 @@ const Nav = () => {
                 <Link to="/about">About</Link>
             </li>
             <li>
-                <Link to="/contact">Contact</Link>
+                <Link to={`/contact/${userId}`}>Contact</Link>
             </li>
             <li>
                 <Link to="/service">Service</Link>
